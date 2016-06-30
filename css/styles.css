@@ -9,6 +9,12 @@ p, h1, h2, h3, h4, h5, h6 {
 	color: white;
 }
 
+img {
+	margin: 16px;
+	width: 256px;
+	height: auto;
+}
+
 #wrapper {
 	margin: 16px;
 	padding: 16px;
