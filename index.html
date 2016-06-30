@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="icon" href="assets/favicon.png">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<title>Random Name Generator</title>
 	</head>
-	<body>
+	<body onload="updateName()">
+		<script type="text/javascript" src="js/index.js"></script>
 		<div id="wrapper">
-			alsdkg
+			<h1>Random Name Generator</h1>
+			<p id="name"></p>
+			<button type="button" onclick="generateRandomName()">Generate Random Name</button>
+			<p id="boast"></p>
 		</div>
 	</body>
 </html>
