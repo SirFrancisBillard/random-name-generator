@@ -14,9 +14,11 @@ var prefixAmt = prefixes.length - 12; // Because it is possible to get "", altho
 var suffixAmt = suffixes.length - 12;
 var combos = prefixAmt * nouns.length * verbs.length * titles.length * suffixAmt;
 
+var statsOpen = false;
+
 function updateName() {
 	document.getElementById('name').innerHTML = firstName + " " + namePrefix + middleName + lastName + " " +nameSuffix;
-	document.getElementById('boast').innerHTML = "Now with " + combos + " different name combinations!"
+	
 }
 
 function generateRandomName() {
@@ -26,6 +28,28 @@ function generateRandomName() {
 	lastName = verbs[Math.floor(Math.random() * verbs.length)];
 	nameSuffix = suffixes[Math.floor(Math.random() * suffixes.length)];
 	updateName()
+}
+
+
+function toggleStats() {
+	statsOpen = !statsOpen;
+	if (statsOpen) {
+		document.getElementById('statsButton').innerHTML = "Hide Stats";
+		document.getElementById('statsTotal').innerHTML = "Total possible combinations: " + combos;
+		document.getElementById('statsPrefixes').innerHTML = "Possible Prefixes: " + prefixAmt;
+		document.getElementById('statsNouns').innerHTML = "Possible Nouns: " + nouns.length;
+		document.getElementById('statsVerbs').innerHTML = "Possible Verbs: " + verbs.length;
+		document.getElementById('statsTitles').innerHTML = "Possible Titles: " + titles.length;
+		document.getElementById('statsSuffixes').innerHTML = "Possible Suffixes: " + suffixAmt;
+	} else {
+		document.getElementById('statsButton').innerHTML = "Show Stats";
+		document.getElementById('statsTotal').innerHTML = ""
+		document.getElementById('statsPrefixes').innerHTML = "";
+		document.getElementById('statsNouns').innerHTML = "";
+		document.getElementById('statsVerbs').innerHTML = "";
+		document.getElementById('statsTitles').innerHTML = "";
+		document.getElementById('statsSuffixes').innerHTML = "";
+	}
 }
 
 document.onload = updateName;
